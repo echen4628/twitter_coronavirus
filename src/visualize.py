@@ -26,3 +26,19 @@ if args.percent:
 items = sorted(counts[args.key].items(), key=lambda item: (item[1],item[0]), reverse=True)
 for k,v in items:
     print(k,':',v)
+
+categories = [item[0] for item in items[:10]][::-1]
+values = [item[1] for item in items[:10]][::-1]
+
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+x_pos = np.arange(len(categories))
+plt.bar(x_pos, values)
+plt.xticks(x_pos, categories)
+plt.savefig(f"{args.input_path}-{args.key}.png")
+plt.close()
+
