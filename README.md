@@ -5,36 +5,24 @@ This repo contains code to monitor the spread of coronavirus on social media usi
 The data contains 1.1 billion tweets and there is one file for every day of 2020, organized in a JSON format.
 To analyze the data efficiently, we utilize MapReduce divide-and-conquer techniques.
 
-<img src=images/reduced.country-#coronavirus.png width=49% /> <img src=images/reduced.lang-#coronavirus.png width=49% />
-<img src=images/reduced.country-#코로나바이러스.png width=49% /> <img src=images/reduced.lang-#코로나바이러스.png width=49% />
+<img src="images/reduced.country-#coronavirus.png" width=49% /> <img src="images/reduced.lang-#coronavirus.png" width=49% />
+<img src="images/reduced.country-#코로나바이러스.png" width=49% /> <img src="images/reduced.lang-#코로나바이러스.png" width=49% />
 
 
 *Directory Structure*
 ```
 twitter_coronavirus/
-
 ├── src/
-
 │   ├── alternative_reduce.py
-
 │   ├── map.py
-
 |   ├── reduce.py
-
 |   └── visualize.py
- 
 ├── outputs/
-
 │   ├── geoTwitter20-mm-dd.zip.country
-
 │   └── geoTwitter20-mm-dd.zip.lang
-
 ├── images/
-
 │   ├── reduced.country-#coronavirus.png
-
 │   └── reduced.lang-#coronavirus.png
-
 ├── .gitignore
 ├── reduced.country
 ├── reduced.lang
