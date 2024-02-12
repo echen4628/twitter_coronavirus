@@ -34,11 +34,20 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib as mpl
 
+mpl.rcParams['font.family'] = 'Malgun Gothic'
+if "country" in args.input_path:
+    x_axis_label = "Country of Origin"
+elif "lang" in args.input_path:
+    x_axis_label = "Language of Origin"
 
 x_pos = np.arange(len(categories))
 plt.bar(x_pos, values)
 plt.xticks(x_pos, categories)
+plt.ylabel("Counts")
+plt.xlabel(x_axis_label)
+plt.title(f"Top 10 origins for Tweets tagged ${args.key}")
 plt.savefig(f"{args.input_path}-{args.key}.png")
 plt.close()
 
